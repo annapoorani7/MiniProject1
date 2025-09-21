@@ -47,6 +47,9 @@ function AdminDashboard() {
               <Link to="/dashboard/students/add" className="d-block text-dark text-decoration-none sidebar-sublink small-text">
                 Add Student
               </Link>
+              <Link to="/dashboard/students/adm" className="d-block text-dark text-decoration-none sidebar-sublink small-text">
+                Admission Letter
+              </Link>
             </div>
           )}
         </div>

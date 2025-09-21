@@ -17,6 +17,9 @@ import AllTeachers from "./components/AllTeachers";
 import AddTeachers from "./components/AddTeachers";
 import JobLetter from "./components/JobLetter";
 import AllStudents from "./components/AllStudents";
+import AdmissionLetter from "./components/AdmissionLeter";
+import PrintAdmissionLetter from "./components/PrintAdmissionLetter";
+import PrintJobLetter from "./components/PrintJobLetter";
 
 function App() {
   return (
@@ -38,11 +41,16 @@ function App() {
         {/* Students */}
         <Route path="students/all" element={<AllStudents/>} />
         <Route path="students/add" element={<AddStudent/>} />
+        <Route path="students/adm" element={<AdmissionLetter/>} />
+        <Route path="students/adm/print" element={<PrintAdmissionLetter />} />
+
+
 
         {/* Teachers */}
         <Route path="teachers/all" element={<AllTeachers/>} />
         <Route path="teachers/add" element={<AddTeachers/>} />
         <Route path="teachers/jobletter" element={<JobLetter/>} />
+         <Route path="teachers/jobletter/print-job-letter" element={<PrintJobLetter />} />
 
         {/* Classes */}
         <Route path="classes/add" element={<AddClass />} />
