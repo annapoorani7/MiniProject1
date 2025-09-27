@@ -6,17 +6,22 @@
   flex-shrink: 0;            /* don’t let it shrink */
 }
 
-/* Sidebar links */
+/* Main sidebar links */
 .sidebar-link {
   cursor: pointer;
   padding: 8px 12px;
   border-radius: 8px;
   transition: background-color 0.2s ease, color 0.2s ease;
+  display: flex;
+  align-items: center;
+  font-size: 0.95rem;
 }
 
+/* Hover style – SAME as AdminDashboard submenus */
 .sidebar-link:hover {
-  background-color: #f1f1f1;
-  color: #007bff;
+  background-color: #e9ecef;  /* light grey */
+  color: #007bff;             /* bootstrap primary */
+  text-decoration: none;      /* remove underline */
 }
 
 /* Sub-links */

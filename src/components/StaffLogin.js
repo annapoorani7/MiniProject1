@@ -1,15 +1,21 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import Navbar from "./Navbar";
 import "bootstrap/dist/css/bootstrap.min.css";
 import image2 from "../images/image2.png";
 
 function StaffLoginPage() {
+  const navigate = useNavigate();
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+    navigate("/staff-dashboard");
+  };
+
   return (
     <div className="container-fluid min-vh-100 d-flex flex-column">
-       <Navbar />
-      {/* Main Content */}
+      <Navbar />
       <div className="row flex-grow-1 d-flex align-items-center justify-content-center px-4">
-        {/* Left Illustration */}
         <div className="col-md-6 d-flex justify-content-center mb-4 mb-md-0">
           <img
             src={image2}
@@ -18,12 +24,10 @@ function StaffLoginPage() {
             style={{ maxWidth: "400px" }}
           />
         </div>
-
-        {/* Right Form */}
         <div className="col-md-5">
           <div className="card border-0 shadow p-4">
             <h2 className="text-center fw-semibold mb-4">Login</h2>
-            <form>
+            <form onSubmit={handleLogin}>
               <div className="mb-3">
                 <input
                   type="email"

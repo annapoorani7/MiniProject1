@@ -8,10 +8,9 @@ import AdminDashboard from "./components/AdminDashboard";
 import About from "./components/About";
 import Contact from "./components/Contact";
 
-
 import Dashboard from "./components/Dashboard";
 import AddClass from "./components/AddClass";
-import AllClasses from "./components/AllClasses";   
+import AllClasses from "./components/AllClasses";
 import AddStudent from "./components/AddStudent";
 import AllTeachers from "./components/AllTeachers";
 import AddTeachers from "./components/AddTeachers";
@@ -20,6 +19,17 @@ import AllStudents from "./components/AllStudents";
 import AdmissionLetter from "./components/AdmissionLeter";
 import PrintAdmissionLetter from "./components/PrintAdmissionLetter";
 import PrintJobLetter from "./components/PrintJobLetter";
+
+// Staff dashboard
+import StaffDashboard from "./components/StaffDashboard";
+import AssignHomework from "./components/AssignHomework";
+import Attendance from "./components/Attendance";
+import EnterMarks from "./components/EnterMarks";
+
+// Student dashboard
+import StudentDashboard from "./components/StudentDashboard"; 
+import Homework from "./components/Homework"; 
+
 
 function App() {
   return (
@@ -35,27 +45,30 @@ function App() {
 
       {/* Admin Dashboard with nested routes */}
       <Route path="/dashboard" element={<AdminDashboard />}>
-        {/* Default dashboard landing page */}
         <Route index element={<Dashboard />} />
-
-        {/* Students */}
-        <Route path="students/all" element={<AllStudents/>} />
-        <Route path="students/add" element={<AddStudent/>} />
-        <Route path="students/adm" element={<AdmissionLetter/>} />
+        <Route path="students/all" element={<AllStudents />} />
+        <Route path="students/add" element={<AddStudent />} />
+        <Route path="students/adm" element={<AdmissionLetter />} />
         <Route path="students/adm/print" element={<PrintAdmissionLetter />} />
-
-
-
-        {/* Teachers */}
-        <Route path="teachers/all" element={<AllTeachers/>} />
-        <Route path="teachers/add" element={<AddTeachers/>} />
-        <Route path="teachers/jobletter" element={<JobLetter/>} />
-         <Route path="teachers/jobletter/print-job-letter" element={<PrintJobLetter />} />
-
-        {/* Classes */}
+        <Route path="teachers/all" element={<AllTeachers />} />
+        <Route path="teachers/add" element={<AddTeachers />} />
+        <Route path="teachers/jobletter" element={<JobLetter />} />
+        <Route path="teachers/jobletter/print-job-letter" element={<PrintJobLetter />} />
         <Route path="classes/add" element={<AddClass />} />
-        <Route path="classes/all" element={<AllClasses />} /> 
+        <Route path="classes/all" element={<AllClasses />} />
       </Route>
+
+      {/* Staff dashboard layout */}
+      <Route path="/staff-dashboard" element={<StaffDashboard />}>
+        <Route path="homework" element={<AssignHomework />} />
+        <Route path="attendance" element={<Attendance />} />
+        <Route path="marks" element={<EnterMarks />} />
+      </Route>
+
+      {/* Student Dashboard Route */}
+      <Route path="/student-dashboard" element={<StudentDashboard />} />
+      <Route path="/student-dashboard/homework" element={<Homework />} />
+
     </Routes>
   );
 }

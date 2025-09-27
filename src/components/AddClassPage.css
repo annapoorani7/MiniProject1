@@ -1,33 +1,30 @@
-/* wrapper keeps spacing consistent in the dashboard content area */
 .add-class-wrapper {
   width: 100%;
 }
 
-/* top breadcrumb/ribbon chip */
 .page-chip {
   display: inline-block;
   background: #ffffff;
   padding: 8px 14px;
   border-radius: 6px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
   font-size: 0.95rem;
   font-weight: 500;
   color: #333;
 }
 
-/* bigger card to match your mock */
 .custom-card {
   border-radius: 15px;
-  width: 560px;               /* ← bigger */
+  width: 560px;
   max-width: calc(100% - 48px);
   border: 1px solid #eaeaea;
 }
 
-/* floating pill labels */
+/* Floating label */
 .custom-label {
   position: absolute;
   top: -13px;
-  left: 65px;                 /* slight inset like the screenshot */
+  left: 50px;
   background: #ff6161;
   color: #fff;
   font-size: 0.85rem;
@@ -37,36 +34,47 @@
   line-height: 1;
 }
 
-/* spacing so the label has room */
+/* spacing */
 .form-group {
   margin-top: 28px;
   margin-bottom: 26px;
 }
 
-/* input/select look & focus behavior */
-.form-control,
-.form-select {
+/* ✅ Rectangular red box */
+.red-box {
   height: 48px;
   font-size: 0.95rem;
-  border-radius: 999px;
+  border-radius: 8px !important;
+  border: 2px solid #ff6b6b !important;
+  padding-right: 40px;
+  text-align: center;
 }
 
-.form-control.border-danger,
-.form-select.border-danger {
-  border-color: #ff6b6b !important;
-}
-
-.form-control:focus,
-.form-select:focus {
+.red-box:focus {
   box-shadow: none;
   border-color: #ff6b6b;
 }
 
-/* submit button style matching the beige pill */
+/* ✅ Icon wrapper */
+.input-icon-wrapper {
+  position: relative;
+}
+
+.calendar-icon {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #ff6b6b;
+  font-size: 1.2rem;
+  pointer-events: none;
+}
+
 .custom-submit {
   background: #e9b72d;
   color: #000;
   border: none;
   padding: 6px 22px;
   font-size: 0.9rem;
+  cursor: pointer;
 }
